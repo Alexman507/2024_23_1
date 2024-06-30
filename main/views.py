@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.urls import reverse_lazy
@@ -68,8 +68,8 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         user = self.request.user
         if user == self.object.owner:
             return ProductForm
-        if (user.has_perm('catalog.can_edit_description') and user.has_perm('catalog.can_edit_category')
-                and user.has_perm('catalog.can_change_is_published')):
+        if (user.has_perm('main.can_change_product_description') and user.has_perm('main.can_change_product_category')
+                and user.has_perm('main.can_change_is_published')):
             return ProductModeratorForm
         raise PermissionDenied
 
