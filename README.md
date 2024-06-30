@@ -9,6 +9,9 @@
 
 Для загрузки настроенных групп и разрешений:
 `python manage.py loaddata data/groups.json`
+Также можно подгрузить пользователей:
+`python manage.py loaddata data/users.json`
+
 
 ## Задание 1 ()
 

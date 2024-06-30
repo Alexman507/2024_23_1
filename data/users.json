@@ -1,0 +1,69 @@
+[
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$F9K6jPBgZTBMFbEwZdS73I$68Xv0qSxHUYsE6GT8vRQB0QUF8phcwFK0HYqXDVRi9g=",
+    "last_login": "2024-06-30T09:37:44.690Z",
+    "is_superuser": true,
+    "first_name": "Admin",
+    "last_name": "Admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-06-17T19:44:42.625Z",
+    "email": "nerocross@gmail.com",
+    "phone": null,
+    "avatar": "",
+    "country": null,
+    "token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 12,
+  "fields": {
+    "password": "123",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-06-30T10:52:51Z",
+    "email": "moderator@sky.pro",
+    "phone": null,
+    "avatar": "",
+    "country": null,
+    "token": null,
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$2ER0pmlbTk48ZMPV1bcLLO$x7uebd2Ja3yK4YyB1Pofd2HkSkFC6VBqlnn5DHOxF4o=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Content-manager",
+    "last_name": "SkyPro",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-06-30T11:14:04Z",
+    "email": "content-manager@sky.pro",
+    "phone": null,
+    "avatar": "",
+    "country": null,
+    "token": null,
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+}
+]
