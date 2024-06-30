@@ -34,6 +34,12 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
             return self.cleaned_data
 
 
+class ProductModeratorForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('description', 'category', 'is_published',)
+
+
 class ContactForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Contact
