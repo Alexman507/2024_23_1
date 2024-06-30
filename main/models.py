@@ -35,6 +35,7 @@ class Product(models.Model):
     - Цена за покупку price
     - Дата создания (записи в БД) created_at
     - Дата последнего изменения (записи в БД) updated_at
+    - Опубликовано (булево значение) is_published
     """
     name = models.CharField(max_length=250, verbose_name='Наименование', help_text="Введите наименование", )
     description = models.TextField(verbose_name='Описание', **NULLABLE, help_text="Введите описание", )
@@ -49,6 +50,11 @@ class Product(models.Model):
                                       help_text="Введите дату изменения", )
     owner = models.ForeignKey(User, verbose_name='Владелец', blank=True, null=True, on_delete=models.SET_NULL)
 
+    is_published = models.BooleanField(default=False,
+                                       verbose_name="опубликовано",
+                                       help_text="опубликовать (сделать видимым для пользователей)",
+                                       )
+
     def __str__(self):
         return f'{self.name}'
 
@@ -56,6 +62,12 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
         ordering = ["category", "name"]
+        permissions = [
+            ("can_change_is_published", "can edit is published"),
+            ("can_change_product_description", "can edit products description"),
+            ("can_change_product_category", "can edit products category")
+
+        ]
 
 
 class Contact(models.Model):
