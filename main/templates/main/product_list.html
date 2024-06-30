@@ -26,16 +26,14 @@
 
                     <a class="btn btn-primary" href="{% url 'main:product_detail' object.pk%}"
                        role="button">Подробнее</a>
-                    {% if perms.catalog.can_edit_description and
-                    perms.catalog.can_edit_category and perms.catalog.can_change_is_published
-                    or user == product.owner %}
+                    {% if perms.main.can_edit_description and perms.main.can_edit_category and perms.main.can_change_is_published or user == product.owner %}
                     <a class="btn btn-primary" href="{% url 'main:product_update' object.pk%}"
                        role="button">Изменить</a>
                     {% endif %}
                     {% if user == product.owner or user.is_superuser %}
                     <a class="btn btn-primary" href="{% url 'main:product_delete' object.pk%}"
                        role="button">Удалить</a>
-
+                    {% endif %}
                 </div>
                 <button type="button"  class="btn btn-lg btn-block btn-outline-primary">Купить</button>
             </div>
