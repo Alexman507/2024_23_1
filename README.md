@@ -1,15 +1,21 @@
 ## Настройка проекта
 После клонирования введите следующие команды (на винде, для другой системы команды отличаются) в консоли в папке проекта:
-`python -m venv venv` 
+`python -m venv venv`
+
 `venv/scripts/activate`
+
 `pip install -r requirements.txt`
 
 Не забудьте активировать миграции, чтобы связи с БД работали:
+
 `python manage.py migrate`
 
 Для загрузки настроенных групп и разрешений:
+
 `python manage.py loaddata data/groups.json`
+
 Также можно подгрузить пользователей:
+
 `python manage.py loaddata data/users.json`
 
 
@@ -22,7 +28,9 @@
 - может менять категорию любого продукта.
 
 Группу создавайте в админке. Права доступа для продуктов опишите в модели продукта и назначьте группе через админку. Не забудьте сохранить группы фикстурой или создать команду для создания групп для отправки наставнику на проверку.
-`python -Xutf8 manage.py dumpdata auth.permission --indent 2 --output data/groups.json`, то же самое сделал с группами, потом вручную переложил в groups.json
+`python -Xutf8 manage.py dumpdata auth.permission --indent 2 --output data/groups.json`, 
+
+то же самое сделал с группами, потом вручную переложил в groups.json
 
 Примечание
 
